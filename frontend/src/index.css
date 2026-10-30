@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-background text-textMain font-sans m-0 antialiased;
+  }
+}
+
+.dashboard-container {
+  @apply min-h-screen bg-background flex flex-col;
+}
+
+.navbar {
+  @apply sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-white/10;
+}
+
+.nav-links {
+  @apply hidden md:flex items-center gap-6;
+}
+
+.nav-link {
+  @apply text-textMuted hover:text-white transition-colors text-sm font-medium;
+}
+
+.nav-link.active {
+  @apply text-white;
+}
+
+.dashboard-hero {
+  @apply flex-1 max-w-7xl mx-auto w-full px-6 py-12;
+}
+
+.hero-card {
+  @apply max-w-2xl mx-auto bg-surface p-10 rounded-3xl border border-white/5 shadow-xl text-center relative overflow-hidden transition-all duration-500;
+}
+
+.hero-card.analyzing {
+  @apply scale-105 border-primary/30 shadow-[0_0_50px_rgba(239,68,68,0.1)];
+}
+
+.hero-title {
+  @apply text-4xl font-extrabold mb-4 tracking-tight;
+}
+
+.hero-subtitle {
+  @apply text-textMuted mb-10;
+}
+
+.upload-section {
+  @apply mt-8 border-2 border-dashed border-white/10 rounded-2xl p-10 flex flex-col items-center gap-6 bg-black/20 hover:border-primary/50 transition-colors;
+}
+
+.btn-browse {
+  @apply px-6 py-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors font-medium text-sm;
+}
+
+.btn-upload {
+  @apply px-6 py-2.5 rounded-full bg-primary hover:bg-primaryHover text-white shadow-[0_0_20px_rgba(239,68,68,0.3)] transition-all font-medium text-sm;
+}
+
+.report-container {
+  @apply max-w-6xl mx-auto bg-surface rounded-3xl border border-white/10 overflow-hidden shadow-2xl;
+}
+
+.report-header {
+  @apply flex justify-between items-center p-8 border-b border-white/10 bg-white/[0.02];
+}
+
+.report-grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10;
+}
+
+.report-main {
+  @apply lg:col-span-2 p-8 flex flex-col gap-8;
+}
+
+.report-sidebar {
+  @apply p-8 bg-black/20;
+}
+
+.report-section {
+  @apply bg-black/20 rounded-2xl p-6 border border-white/5;
+}
+
+.section-title {
+  @apply text-sm uppercase tracking-wider text-textMuted mb-4 font-semibold;
+}
+
+.status-badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium;
+}
+
+.status-badge.abnormal {
+  @apply border-red-500/30 bg-red-500/10 text-red-400;
+}
+
+.pulse-dot {
+  @apply w-2 h-2 rounded-full bg-red-500 animate-pulse;
+}
+
+.info-row {
+  @apply flex justify-between items-center py-3 border-b border-white/5 last:border-0;
+}
+
+.info-label {
+  @apply text-textMuted text-sm;
+}
+
+.info-value {
+  @apply font-medium;
+}
+
+.text-red {
+  @apply text-primary;
+}
+
+.region-list {
+  @apply list-disc list-inside text-white/80 space-y-2;
+}
+
+.prob-card {
+  @apply bg-surfaceHigh rounded-2xl p-6 border border-white/5 mb-6;
+}
+
+.sidebar-label {
+  @apply text-sm text-textMuted mb-2;
+}
+
+.prob-value {
+  @apply text-5xl font-extrabold text-white mb-4;
+}
+
+.prob-bar-container {
+  @apply h-2 w-full bg-black rounded-full overflow-hidden;
+}
+
+.prob-bar {
+  @apply h-full bg-gradient-to-r from-yellow-500 to-red-500 rounded-full transition-all duration-1000 ease-out;
+}
+
+.disclaimer-card {
+  @apply p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400;
+}
+
+.scanning-container {
+  @apply flex flex-col items-center justify-center py-12 relative;
+}
+
+.spinning-icon {
+  @apply animate-spin duration-3000;
+}
+
+.scanning-line {
+  @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-[scan_2s_ease-in-out_infinite];
+}
+
+@keyframes scan {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(300px); opacity: 0; }
+}

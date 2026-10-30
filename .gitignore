@@ -1,0 +1,37 @@
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+litwinx/
+
+# Node
+node_modules/
+dist/
+
+# Generated outputs and temporary files
+uploads/
+outputs/
+temp/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# LitTwinX patient data and database
+backend/litwinx.db
+backend/data/
+backend/uploads/
+backend/analyses/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
